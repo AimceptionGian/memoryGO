@@ -6,12 +6,16 @@ function App() {
 const [count, setCount] = useState(0);
 
 const incCount = () => {
-  setCount(count + 1)
+  setCount(count + 1);
   console.log(count);
 }
 
   return (
-    <input type="button" onClick={ incCount } placeholder='gidvhr'></input>
+    <div>
+      <input type="text" placeholder='Team1'></input>
+      <input type="text" placeholder='Team2'></input>
+      <input type="button" onClick={ incCount }></input>
+    </div>
   );  
 }
 

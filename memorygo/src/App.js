@@ -12,6 +12,9 @@ const [team2btnState, setTeam2btnState] = useState(false);
 function btn1click() {
   if(Math.floor(Math.random() * 11) >= 5) {
     incCountT1();
+    document.getElementById("status").value += "Basket made by the Guests \n";
+  } else {
+    document.getElementById("status").value += "Guets miss the basket \n";
   }
   setTeam1btnState(true);
   setTeam2btnState(false);
@@ -20,6 +23,9 @@ function btn1click() {
 function btn2click() {
   if(Math.floor(Math.random() * 11) >= 5) {
     incCountT2();
+    document.getElementById("status").value += "Basket made by the home team \n";
+  } else {
+    document.getElementById("status").value += "Home team miss the basket \n";
   }
   setTeam2btnState(true);
   setTeam1btnState(false);

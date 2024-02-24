@@ -55,24 +55,35 @@ function gameWon(team) {
   setTeam2btnState(true);
 }
 
-let progressWidth = 500;
+let progressWidth = 250;
+let size = 50;
   return (
     <div>
-      <p>Guest</p>
-      <input id='team1' type="text" placeholder='Team1'></input>
-      <input id='team1btn' type="button" onClick={btn1click} disabled={team1btnState || countT1 >= 12 || countT2 >= 12} placeholder='Points Team1'></input>
-      <p>Points {countT1}</p>
-      <div id='progress1Bg' style={{width: progressWidth , height: '20px', backgroundColor: 'grey'}}>
-        <div id='progress2' style={{width: progressWidth/12*countT1 , height: '20px', backgroundColor: 'lightblue'}}></div>
+      <div className='flex-container'>
+        <div className='flex-item'>
+          <p className='flex-item'>Guest</p>
+          <input className='flex-item' id='team1' type="text" placeholder='Team1'></input>
+          <button className='flex-item' id='team1btn' type="button" style={{width: size, height: size}} onClick={btn1click} disabled={team1btnState || countT1 >= 12 || countT2 >= 12} placeholder='Points Team1'>Shoot</button>
+          <p className='flex-item'>Points {countT1}</p>
+          <div className='flex-item' id='progress1Bg' style={{width: progressWidth , height: '20px', backgroundColor: 'grey'}}>
+            <div id='progress2' style={{width: progressWidth/12*countT1 , height: '20px', backgroundColor: 'lightblue'}}></div>
+          </div>
+        </div>
+        <div className='flex-item' style={{width: progressWidth}}>
+          <h4 className='flex-item' id='result'></h4>
+          <p>Status</p>
+          <textarea readOnly id='status' className='output'></textarea>
+        </div>
+        <div className='flex-item'>
+          <p className='flex-item'>Home</p>
+          <input className='flex-item' id='team2' type="text" placeholder='Team2'></input>
+          <button className='flex-item' id='team2btn' type="button" style={{width: size, height: size}} onClick={btn2click} disabled={team2btnState || countT1 >= 12 || countT2 >= 12} placeholder='Points Team2'>Shoot</button>
+          <p className='flex-item'>Points {countT2}</p>
+          <div className='flex-item' id='progress2Bg' style={{width: progressWidth , height: '20px', backgroundColor: 'grey'}}>
+            <div id='progress1' style={{width: progressWidth/12*countT2 , height: '20px', backgroundColor: 'lightblue'}}></div>
+          </div>
+        </div>
       </div>
-      <p>Home</p>
-      <input id='team2' type="text" placeholder='Team2'></input>
-      <input id='team2btn' type="button" onClick={btn2click} disabled={team2btnState || countT1 >= 12 || countT2 >= 12} placeholder='Points Team2'></input>
-      <p>Points {countT2}</p>
-      <div id='progress2Bg' style={{width: progressWidth , height: '20px', backgroundColor: 'grey'}}>
-        <div id='progress1' style={{width: progressWidth/12*countT2 , height: '20px', backgroundColor: 'lightblue'}}></div>
-      </div>
-      <p id='result'></p>
     </div>
   );
 }

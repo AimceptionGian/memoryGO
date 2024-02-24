@@ -6,42 +6,36 @@ function App() {
 const [countT1, setCountT1] = useState(0);
 const [countT2, setCountT2] = useState(0);
 
-const [round, setRound] = useState(1);
-const [team2btn, setTeam2btn] = useState(true);
+const [team1btnState, setTeam1btnState] = useState(true);
+const [team2btnState, setTeam2btnState] = useState(true);
 
 function btn1click() {
-  incCountT1();
-  rounds();
+  if(Math.floor(Math.random() * 11) >= 5) {
+    incCountT1();
+  }
+  document.getElementById("team1btn").disabled = true;
+  document.getElementById("team2btn").disabled = false;
 }
 
 function btn2click() {
-  incCountT2();
-  rounds();
+  if(Math.floor(Math.random() * 11) >= 5) {
+    incCountT2();
+  }
+  document.getElementById("team2btn").disabled = true;
+  document.getElementById("team1btn").disabled = false;
 }
 
 function incCountT1() {
-  if(countT1 < 12) {
-    setCountT1(countT1 + 3);
-    //console.log(countT2);
-  } else {
+  setCountT1(countT1 + 3);
+  if(countT1 + 3 == 12) {
     console.log('T1 hat gewonnen');
   }
 } 
 
 function incCountT2() {
-  if(countT2 < 12) {
-    setCountT2(countT2 + 3);
-    //console.log(countT2);
-  } else {
+  setCountT2(countT2 + 3);
+  if(countT2 + 3 == 12) {
     console.log('T2 hat gewonnen');
-  }
-}
-
-function rounds() {
-  if (round%2 > 0) {
-    setTeam2btn(true);
-  } else {
-    setTeam2btn(false);
   }
 }
 

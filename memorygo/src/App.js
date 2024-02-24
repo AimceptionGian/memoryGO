@@ -24,21 +24,23 @@ const incCountT2 = () => {
   }
 }
 
+let progressWidth = 500;
+
   return (
     <div>
       <p>Guest</p>
       <input id='team1' type="text" placeholder='Team1'></input>
       <input type="button" onClick={ incCountT1 } placeholder='Points Team1'></input>
       <p>{countT1}</p>
-      <div id='progress1Bg' style={{width: '200px' , height: '20px', backgroundColor: 'grey'}}>
-        <div id='progress2' style={{width: 200/12*countT1 , height: '20px', backgroundColor: 'lightblue'}}></div>
+      <div id='progress1Bg' style={{width: progressWidth , height: '20px', backgroundColor: 'grey'}}>
+        <div id='progress2' style={{width: progressWidth/12*countT1 , height: '20px', backgroundColor: 'lightblue'}}></div>
       </div>
       <p>Home</p>
       <input id='team2' type="text" placeholder='Team2'></input>
       <input type="button" onClick={incCountT2} placeholder='Points Team2'></input>
       <p>{countT2}</p>
-      <div id='progress2Bg' style={{width: '200px' , height: '20px', backgroundColor: 'grey'}}>
-        <div id='progress1' style={{width: 200/12*countT2 , height: '20px', backgroundColor: 'lightblue'}}></div>
+      <div id='progress2Bg' style={{width: progressWidth , height: '20px', backgroundColor: 'grey'}}>
+        <div id='progress1' style={{width: progressWidth/12*countT2 , height: '20px', backgroundColor: 'lightblue'}}></div>
       </div>
     </div>
   );  

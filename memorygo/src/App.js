@@ -39,7 +39,9 @@ function incCountT2() {
 
 function rounds() {
   if (round%2 > 0) {
-
+    setTeam2btn(true);
+  } else {
+    setTeam2btn(false);
   }
 }
 

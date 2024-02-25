@@ -14,8 +14,6 @@ function shoot(team) {
     if(team === "team1") {
       setCountT1(countT1 + 3);
       document.getElementById("status").value += "Basket made by the Guests \n";
-      setTeam1btnState(true);
-      setTeam2btnState(false);
       if(countT1 + 3 == 12) {
         if(document.getElementById("team1").value.trim() === "") {
           gameWon("Team 1");
@@ -26,8 +24,6 @@ function shoot(team) {
     } else if(team === "team2") {
       setCountT2(countT2 + 3);
       document.getElementById("status").value += "Basket made by the home team \n";
-      setTeam2btnState(true);
-      setTeam1btnState(false);
       if(countT2 + 3 == 12) {
         if(document.getElementById("team2").value.trim() === "") {
           gameWon("Team 2");
@@ -43,6 +39,8 @@ function shoot(team) {
       document.getElementById("status").value += "Home team miss the basket \n";
     }
   }
+  setTeam1btnState(team === "team1" ? true : false);
+  setTeam2btnState(team === "team2" ? true : false);
 }
 
 function gameWon(team) {

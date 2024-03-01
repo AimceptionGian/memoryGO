@@ -1,5 +1,6 @@
 import './App.css';
 import react, {useState} from 'react';
+import bbBild from './images/basketball.jpg';
 
 function App() {
 
@@ -64,6 +65,7 @@ let size = 50;
           </div>
         </div>
         <div className='flex-item' style={{width: progressWidth}}>
+          <img className='image' src={bbBild} alt='Basketball Bild' />
           <h4 className='flex-item' id='result'></h4>
           <p>Status</p>
           <textarea readOnly id='status' className='output'></textarea>

@@ -35,7 +35,7 @@ function shoot(team) {
     }
   } else {
     if(team === "team1") {
-      document.getElementById("status").value += "Guets miss the basket \n";
+      document.getElementById("status").value += "Guests miss the basket \n";
     } else if(team === "team2") {
       document.getElementById("status").value += "Home team miss the basket \n";
     }
